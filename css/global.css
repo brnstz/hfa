@@ -1,0 +1,124 @@
+body{font-family: 'Abel', sans-serif;text-align:center;}
+.dialog{display:none;}
+#hfa {margin:10px auto 0 auto;text-align:left;
+	width:990px;border:1px solid #ccc;
+  -webkit-border-radius: 12px; 
+     -moz-border-radius: 12px; 
+          border-radius: 12px; 
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+overflow:hidden;
+padding:10px;
+	}
+	#hfa #header{position:relative;}
+	#hfa #teamChoice {position:absolute;top:10px;right:0px;}
+	#hfa .login{display:none;top:0px;right:0;} 
+	#hfa #totalCheckins{position: absolute;top: 0;left: 375px;top: 11px;font-size: 20px;font-weight: bold;}
+	#hfa #jumpLinks{position: absolute;top: 46px;left: 233px;}
+	
+	#hfa.success .login {display:block;position:absolute;}
+	#hfa.success #pledgeBtn{cursor:pointer;border:1px solid #ccc;background-color:#0CBADF;
+		-webkit-border-radius: 5px; 
+	     -moz-border-radius: 5px; 
+	          border-radius: 5px; 
+	  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+	text-align: center;padding: 4px;width: 154px;display:none;}
+	
+	#hfa h1{font-size:40px;color:#0CBADF;text-shadow: 1px 1px 1px #888;}
+	#hfa h1 span{text-transform:uppercase;font-weight:bold;color:#FF6600;}
+	#hfa h2{background:url(http://playfoursquare.s3.amazonaws.com/press/logo/poweredby-black.png);width:236px;height:28px;text-indent:-9999em;}
+	#hfa #loader{margin: 0 auto;display: block;width:990px;}
+	#hfa #loader img{margin: 0 auto;display: block;}
+	#hfa ol li{color: #333333;font: 16px arial,helvetica,sans-serif;padding: 7px;width:225px;float:left;overflow:hidden;height:190px;background-color:#ccc;margin:4px;
+		
+		-webkit-border-radius: 5px; 
+	     -moz-border-radius: 5px; 
+	          border-radius: 5px; 
+	  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;	 
+	  background-color: #dddddd;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#cccccc)); 
+	  background-image: -webkit-linear-gradient(top, #dddddd, #cccccc); 
+	  background-image:    -moz-linear-gradient(top, #dddddd, #cccccc); 
+	  background-image:     -ms-linear-gradient(top, #dddddd, #cccccc); 
+	  background-image:      -o-linear-gradient(top, #dddddd, #cccccc); 
+	  background-image:         linear-gradient(top, #dddddd, #cccccc);
+	            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#dddddd', EndColorStr='#cccccc'); 
+	
+			  -webkit-box-shadow: 0px 0px 4px #000; 
+			     -moz-box-shadow: 0px 0px 4px #000; 
+			          box-shadow: 0px 0px 4px #000; 
+
+
+
+
+	}
+		
+	#hfa table.teamTable caption{}
+	#hfa table.teamTable {border:1px solid #ccc;background-color:#fff;font-size:10px;height:120px;width:225px;}
+	#hfa table.teamTable .record{font-size:10px;display:block;}
+	#hfa table.teamTable .status{padding:5px 2px;}
+	#hfa table.teamTable .checkIns{width: 60px;}
+	#hfa table.teamTable tbody td, #hfa table.teamTable tbody th{border:1px solid #ccc;border-collapse:collapse;padding:2px;}
+	#hfa table.teamTable tbody tr {height:50px;}
+	#hfa table.teamTable tbody tr th{position:relative;width:200px;}
+	#hfa table.teamTable tbody th div{position: absolute;}
+	#hfa li table tbody th a {
+		font-size:14px;
+	display:block;
+	  margin-left:4px;
+	  background:url(http://mlb.mlb.com/images/scoreboard/logo_sprite.png) no-repeat 6px 0;
+	  height:36px;
+	  text-align:left;
+	  vertical-align:middle;
+	  text-decoration:none;
+	  color:#333;
+	  padding-left:48px;
+	  overflow:hidden;
+	  zoom:1;
+	}
+	#hfa li table.teamTable tbody th a.jetsetter {background:url(../img/jetsetter.png) no-repeat;}
+	#hfa li table.teamTable tbody th a.ana { background-position:6px -504px; }
+	#hfa li table.teamTable tbody th a.ari { background-position:6px -36px; }
+	#hfa li table.teamTable tbody th a.atl { background-position:6px -72px; }
+	#hfa li table.teamTable tbody th a.bal { background-position:6px -108px; }
+	#hfa li table.teamTable tbody th a.bos { background-position:6px -144px; }
+	#hfa li table.teamTable tbody th a.chc { background-position:6px -180px; }
+	#hfa li table.teamTable tbody th a.cin { background-position:6px -216px; }
+	#hfa li table.teamTable tbody th a.cle { background-position:6px -252px; }
+	#hfa li table.teamTable tbody th a.col { background-position:6px -288px; }
+	#hfa li table tbody th a.cws { background-position:6px -324px; }
+	#hfa li table tbody th a.det { background-position:6px -360px; }
+	#hfa li table tbody th a.fla { background-position:6px -396px; }
+	#hfa li table tbody th a.hou { background-position:6px -432px; }
+	#hfa li table tbody th a.kc { background-position:6px -468px; }
+	#hfa li table tbody th a.la { background-position:6px -540px; }
+	#hfa li table tbody th a.mil { background-position:6px -576px; }
+	#hfa li table tbody th a.min { background-position:6px -612px; }
+	#hfa li table tbody th a.nym { background-position:6px -648px; }
+	#hfa li table tbody th a.nyy { background-position:6px -684px; }
+	#hfa li table tbody th a.oak { background-position:6px -720px; }
+	#hfa li table tbody th a.phi { background-position:6px -756px; }
+	#hfa li table tbody th a.pit { background-position:6px -792px; }
+	#hfa li table tbody th a.sd { background-position:6px -828px; }
+	#hfa li table tbody th a.sea { background-position:6px -864px; }
+	#hfa li table tbody th a.sf { background-position:6px -900px; }
+	#hfa li table tbody th a.stl { background-position:6px -936px; }
+	#hfa li table tbody th a.tb { background-position:6px -972px; }
+	#hfa li table tbody th a.tex { background-position:6px -1008px; }
+	#hfa li table tbody th a.tor { background-position:6px -1044px; }
+	#hfa li table tbody th a.was { background-position:6px -1080px; }
+	#hfa li table tbody th a.al { background-position:6px -1116px; }
+	#hfa li table tbody th a.nl { background-position:6px -1152px; }
+	
+	#hfa li table tbody .checkIns{font-size:25px;padding:5px;}
+	
+	#hfa .footer{text-align:center;font-size:12px;height:20px;}
+	#hfa .footer a {font-size:15px;font-weight:bold;color:#000;font-family: 'Abel', sans-serif;}
+	.ui-dialog-content ol.homeAwayStats li{float:left;width:300px;}
+	.ui-dialog-content .whosHere ol li {float:left;width:30px;}
+	.ui-dialog-content .whosHere ol.homeAwayStats {clear:both;}
+	.ui-dialog-content .whosHere ol li img {width:25x;height:25px;padding:1px;border:1px solid #ccc;}
+	.ui-dialog-content h2{font-size:12px;font-weight:bold;padding:3px 0;}
+	
+	#hfa #connectToFsq{background:url("http://playfoursquare.s3.amazonaws.com/press/logo/connect-blue.png") no-repeat;width:150px;height:24px;text-indent:-9999em;cursor:pointer;}
+	
+	.ui-datepicker-trigger {cursor:pointer;}

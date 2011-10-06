@@ -1,0 +1,3 @@
+# m h  dom mon dow   command
+*/5 * * * * /home/bseitz/git/hfa/crons/update_scoreboard.sh
+*/20 * * * * /home/bseitz/git/hfa/crons/get_checkins.py && /home/bseitz/git/hfa/crons/compute_stats.py
