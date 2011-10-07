@@ -5,7 +5,7 @@ import os
 import time
 import json
 
-CONF = json.load(open('/home/bseitz/git/hfa/conf/hfa.conf'))
+CONF = json.load(open('/usr/local/hfa/conf/hfa.conf'))
 ROOT  = CONF['root']
 TOKEN = CONF['token']
 API   = 'https://api.foursquare.com/v2/venues/%s/herenow?oauth_token=%s&limit=%d&offset=%d&afterTimestamp=%d'

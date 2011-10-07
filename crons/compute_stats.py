@@ -7,8 +7,7 @@ import datetime
 
 TODAY = datetime.date.today()
 
-# FIXME
-CONF = json.load(open('/home/bseitz/git/hfa/conf/hfa.conf'))
+CONF = json.load(open('/usr/local/hfa/conf/hfa.conf'))
 
 DATA_DIR = "%s/data/checkins" % (CONF['root'])
 
@@ -18,7 +17,7 @@ MATCH_DATA = {}
 CITY_COUNT = {}
 
 def game_matchups():
-	fh = open(os.path.join(CONF['root'], 'static/master_scoreboard-' + TODAY.isoformat() + '.json'), 'r')
+	fh = open(os.path.join(CONF['root'], 'data/static/master_scoreboard-' + TODAY.isoformat() + '.json'), 'r')
 	data = json.loads(fh.read())
 	fh.close()
 

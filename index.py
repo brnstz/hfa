@@ -10,7 +10,7 @@ import datetime
 import urllib
 
 # FIXME
-CONF  = json.load(open('/home/bseitz/git/hfa/conf/hfa.conf'))
+CONF  = json.load(open('/usr/local/hfa/conf/hfa.conf'))
 TODAY = datetime.date.today()
 ROOT  = CONF['root']
 TOKEN = CONF['token']
@@ -20,14 +20,13 @@ USER_QUERY='https://api.foursquare.com/v2/users/self?oauth_token='
 URLS = (
 	'/scoreboard.jsonp', 'Scoreboard',
 	'/declare.jsonp', 'Declare',
-
 )
 
 
 DELETE_KEYS = ['broadcast', 'away_probable_pitcher', 'home_probable_pitcher', 'game_media', 'links', 'video_thumbnail']
 
 def get_scoreboard_file(datestamp):
-	return ROOT + '/static/master_scoreboard-' + datestamp + '.json'
+	return ROOT + '/data/static/master_scoreboard-' + datestamp + '.json'
 
 def get_counts_file(datestamp):
 	return ROOT + '/data/counts/current-' + datestamp + '.json'
