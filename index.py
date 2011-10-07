@@ -9,7 +9,6 @@ import json
 import datetime
 import urllib
 
-# FIXME
 CONF  = json.load(open('/usr/local/hfa/conf/hfa.conf'))
 TODAY = datetime.date.today()
 ROOT  = CONF['root']
@@ -63,6 +62,8 @@ class Scoreboard:
 
 		scoreboard['TODAY'] = i.date
 		scoreboard['data']['total_checkins'] = total_checkins
+
+		scoreboard['test']['brian'] = 'hey'
 
 
 		return i.callback + '(' + json.dumps(scoreboard) + ')'
