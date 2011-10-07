@@ -20,6 +20,7 @@ USER_QUERY='https://api.foursquare.com/v2/users/self?oauth_token='
 URLS = (
 	'/scoreboard.jsonp', 'Scoreboard',
 	'/declare.jsonp', 'Declare',
+
 )
 
 
