@@ -63,7 +63,7 @@ class Scoreboard:
 		scoreboard['TODAY'] = i.date
 		scoreboard['data']['total_checkins'] = total_checkins
 
-		scoreboard['test']['brian'] = 'hey'
+		scoreboard['test'] = 'hey'
 
 
 		return i.callback + '(' + json.dumps(scoreboard) + ')'
