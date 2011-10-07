@@ -22,8 +22,17 @@ def game_matchups():
 	fh.close()
 
 	home_to_away = {}
-	for game in data['data']['games']['game']:
+
+	# Usual case, more than one game in a day
+	if isinstance(data['data']['games']['game'], (list)):
+		for game in data['data']['games']['game']:
+			home_to_away[game['home_file_code']] = game['away_file_code']
+
+	# Special case when only one game is scheduled for the day
+	else:
+		game = data['data']['games']['game']
 		home_to_away[game['home_file_code']] = game['away_file_code']
+		
 
 	return home_to_away
 

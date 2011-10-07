@@ -39,6 +39,11 @@ class Scoreboard:
 		scoreboard = load_json(get_scoreboard_file(i.date))
 
 		total_checkins = 0
+
+		# If not a list, make it so 
+		if not isinstance(scoreboard['data']['games']['game'], (list)):
+			scoreboard['data']['games']['game'] = [scoreboard['data']['games']['game']]
+		
 		for game in scoreboard['data']['games']['game']:
 			home = game['home_file_code']
 			away = game['away_file_code']
