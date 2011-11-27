@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Homefield ADVANTAGE</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Joe Kanakaraj">
+	<link rel="stylesheet" href="css/resets.css" type="text/css" media="all" /> 
+	<link rel="stylesheet" href="css/global.css" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Monoton|Abel' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/jquery.ui.all.css" type="text/css" media="all" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="http://scripts.joe-kanakaraj.com/jquery.tpl/jquery.template.min.js"></script>
+	<script src="js/hfa.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+</head>
+<body>
+
+
+
+<div id="hfa" class="pledge">
+	<div id="header">
+		<h1>Home Field <span>Advantage</span></h1>
+		<h2>Powered by Foursquare</h2>
+	</div>
+	<h3>Nice! Now choose your favorite teams!</h3>
+	<p>By pledging your allegence to your favorite MLB and NFL teams, we'll make sure that you're counted as a fan of that team when you check-in to a game.  </p>
+	<div id="errors"></div>
+	<form id="teamSelection">
+	<ol>
+		<li id="mlb">
+			<h4>MLB</h4>
+			<select name="mlb">
+				<option value="">Select a Team</option>
+				<option value="ari">Arizona Diamondbacks</option>
+				<option value="atl">Atlanta Braves</option>
+				<option value="bal">Baltimore Orioles</option>
+				<option value="bos">Boston Red Sox</option>
+				<option value="chc">Chicago Cubs</option>
+				<option value="cws">Chicago White Sox</option>
+				<option value="cin">Cincinnati Reds</option>
+				<option value="cle">Cleveland Indians</option>
+				<option value="col">Colorado Rockies</option>
+				<option value="det">Detroit Tigers</option>
+				<option value="fla">Florida Marlins</option>
+				<option value="hou">Houston Astros</option>
+				<option value="kc">Kansas City Royals</option>
+				<option value="ana">Los Angeles Angels</option>
+				<option value="la">Los Angeles Dodgers</option>
+				<option value="mil">Milwaukee Brewers</option>
+				<option value="min">Minnesota Twins</option>
+				<option value="nym">New York Mets</option>
+				<option value="nyy">New York Yankees</option>
+				<option value="oak">Oakland Athletics</option>
+				<option value="phi">Philadelphia Phillies</option>
+				<option value="pit">Pittsburgh Pirates</option>
+				<option value="sd">San Diego Padres</option>
+				<option value="sf">San Francisco Giants</option>
+				<option value="sea">Seattle Mariners</option>
+				<option value="stl">St. Louis Cardinals</option>
+				<option value="tb">Tampa Bay Rays</option>
+				<option value="tex">Texas Rangers</option>
+				<option value="tor">Toronto Blue Jays</option>
+				<option value="was">Washington Nationals</option>
+			</select>
+		</li>
+		<li id="nfl">
+			<h4>NFL</h4>
+			<select name="nfl">
+				<option value="">Select a Team</option>
+				<option value="ari">Arizona Cardinals</option>
+				<option value="atl">Atlanta Falcons</option>
+				<option value="bal">Baltimore Ravens</option>
+				<option value="buf">Buffalo Bills</option>
+				<option value="car">Carolina Panthers</option>
+				<option value="chi">Chicago Bears</option>
+				<option value="cin">Cincinnati Bengals</option>
+				<option value="cle">Cleveland Browns</option>
+				<option value="dal">Dallas Cowboys</option>
+				<option value="den">Denver Broncos</option>
+				<option value="1540">Detroit Lions</option>
+				<option value="gb">Green Bay Packers</option>
+				<option value="hou">Houston Texans</option>
+				<option value="ind">Indianapolis Colts</option>
+				<option value="jac">Jacksonville Jaguars</option>
+				<option value="kc">Kansas City Chiefs</option>
+				<option value="mia">Miami Dolphins</option>
+				<option value="min">Minnesota Vikings</option>
+				<option value="ne">New England Patriots</option>
+				<option value="no">New Orleans Saints</option>
+				<option value="nyg">New York Giants</option>
+				<option value="nyj">New York Jets</option>
+				<option value="oak">Oakland Raiders</option>
+				<option value="phi">Philadelphia Eagles</option>
+				<option value="pit">Pittsburgh Steelers</option>
+				<option value="sd">San Diego Chargers</option>
+				<option value="sf">San Francisco 49ers</option>
+				<option value="sea">Seattle Seahawks</option>
+				<option value="stl">St. Louis Rams</option>
+				<option value="tb">Tampa Bay Buccaneers</option>
+				<option value="ten">Tennessee Titans</option>
+				<option value="was">Washington Redskins</option>
+			</select>
+		</li>
+	</ol>
+	<div id="submitBtn"><input class="submit" type="submit" value="Submit"/></div>
+	</form>
+</div>
+
+<script>
+	$(function(){
+		hfa.init();
+		var auth = hfa.getUrlParam("access_token",true);
+		var token = window.location.hash;
+		var interval = 5*1000;
+		var selectVal = "";
+		function hitAPI(club){
+			var access = token.substring(1);
+			$.ajax({
+				url: "http://hfa.brnstz.com/declare.jsonp?"+access+"&team="+club,
+				success: function(json){
+					$(".login").empty().text("Well done!!");
+				}
+			})
+		}
+		
+		$("#teamSelect").bind("change",function(){
+			selectVal = $(this).val();
+			$("#pledgeBtn").fadeIn();
+		});
+
+		$("#teamSelection").validate({
+			errorLabelContainer: $("#errors"),
+			wrapper : "span",
+			rules : {
+				mlb : "required",
+				nfl : "required"
+			},
+			messages: {
+				mlb : "Pick an MLB team.",
+				nfl : "Pick an NFL team."	
+			}
+
+		});
+		
+		$("#pledgeBtn").bind("click",function(){
+			if(selectVal !== "" && selectVal !=="bos"){
+				hitAPI(selectVal);
+			} else {
+				$("#errors").text("Yo dude! You have to select a team!");
+				return false;
+			}
+		});	
+		
+	});
+</script>
+	
+
+</body>
+</html>

@@ -11,11 +11,11 @@ padding:10px;
 	}
 	#hfa #header{position:relative;}
 	#hfa #teamChoice {position:absolute;top:10px;right:0px;}
-	#hfa .login{display:none;top:0px;right:0;} 
+	#hfa .login{display:block;top:0px;right:0;} 
 	#hfa #totalCheckins{position: absolute;top: 0;left: 375px;top: 11px;font-size: 20px;font-weight: bold;}
 	#hfa #jumpLinks{position: absolute;top: 46px;left: 233px;}
 	
-	#hfa.success .login {display:block;position:absolute;}
+	#hfa.success .login {display:block;}
 	#hfa.success #pledgeBtn{cursor:pointer;border:1px solid #ccc;background-color:#0CBADF;
 		-webkit-border-radius: 5px; 
 	     -moz-border-radius: 5px; 
@@ -26,10 +26,69 @@ padding:10px;
 	#hfa h1{font-size:40px;color:#0CBADF;text-shadow: 1px 1px 1px #888;}
 	#hfa h1 span{text-transform:uppercase;font-weight:bold;color:#FF6600;}
 	#hfa h2{background:url(http://playfoursquare.s3.amazonaws.com/press/logo/poweredby-black.png);width:236px;height:28px;text-indent:-9999em;}
+	#hfa h3{text-align: center;font-weight: bold;font-size: 20px;}
 	#hfa #loader{margin: 0 auto;display: block;width:990px;}
 	#hfa #loader img{margin: 0 auto;display: block;}
+	
+	#hfa #errors{color:red;font-weight:bold;text-align:center;padding:0 0 0 0;}
+	#hfa #errors span{padding:2px;}
+
+	/*CONNECT*/
+	#hfa.connect ol{overflow:hidden;margin:20px auto 0 auto;width:260px;}
+	#hfa.connect ol li#step2{display:none;}
+	
+	/*PLEDGE*/	
+	#hfa.pledge h4{text-align:center;}
+	#hfa.pledge select{margin:0 auto;width:225px;}
+	#hfa.pledge ol{overflow:hidden;margin:20px auto 0 auto;width:500px;}
+	#hfa.pledge ol li{height:100px;}
+	#hfa.pledge #submitBtn{margin:0 auto;width:140px;padding:10px 0;}
+	#hfa.pledge #submitBtn input {margin:0 auto;width:65px;
+  background-color: #8c9cbf;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8c9cbf 0%), to(#546a9e 50%));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -moz-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -ms-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: -o-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  background-image: linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
+  border: 1px solid #172d6e;
+  border-bottom: 1px solid #0e1d45;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 0 0 #b1b9cb;
+  -moz-box-shadow: inset 0 1px 0 0 #b1b9cb;
+  -ms-box-shadow: inset 0 1px 0 0 #b1b9cb;
+  -o-box-shadow: inset 0 1px 0 0 #b1b9cb;
+  box-shadow: inset 0 1px 0 0 #b1b9cb;
+  color: #fff;
+  font: bold 16px "helvetica neue", helvetica, arial, sans-serif;
+  padding: 7px 0 8px 0;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 -1px 1px #000f4d;
+  width: 150px; }
+  #hfa.pledge #submitBtn input:hover {
+    background-color: #7f8dad;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7f8dad 0%), to(#4a5e8c 50%));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -moz-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -ms-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: -o-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    background-image: linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
+    cursor: pointer; }
+  #hfa.pledge #submitBtn input:active {
+    -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    -moz-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    -ms-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    -o-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
+    box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white; }
+
 	#hfa ol li{color: #333333;font: 16px arial,helvetica,sans-serif;padding: 7px;width:225px;float:left;overflow:hidden;height:190px;background-color:#ccc;margin:4px;
-		
 		-webkit-border-radius: 5px; 
 	     -moz-border-radius: 5px; 
 	          border-radius: 5px; 
@@ -46,10 +105,6 @@ padding:10px;
 			  -webkit-box-shadow: 0px 0px 4px #000; 
 			     -moz-box-shadow: 0px 0px 4px #000; 
 			          box-shadow: 0px 0px 4px #000; 
-
-
-
-
 	}
 		
 	#hfa table.teamTable caption{}

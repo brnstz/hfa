@@ -69,7 +69,7 @@
 				window.location.href = _url + "&" + club;
 			},
 			init: function(){
-				$.when( hfa.getData() ).done(function(){
+				//$.when( hfa.getData() ).done(function(){
 					
 					$("#datepicker").datepicker({ 
 						minDate: new Date(2011, 8, 17), 
@@ -117,7 +117,7 @@
 						}
 					});
 					
-				});	
+				//});	
 			}
 		}
 		return _self
