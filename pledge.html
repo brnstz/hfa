@@ -147,7 +147,7 @@
 		});
 		
 		$("#pledgeBtn").bind("click",function(){
-			if(selectVal !== "" && selectVal !=="bos"){
+			if(selectVal !== ""){
 				hitAPI(selectVal);
 			} else {
 				$("#errors").text("Yo dude! You have to select a team!");

@@ -35,17 +35,23 @@
 			},
 			_self = {
 			getUrlParam : getUrlParam,
-			getData : function(){
-					var dfd = jQuery.Deferred(),
-						tpl = "tpl/gameBox2.tpl",
-						$list = $("#hfa ol"),
-						getDate = getUrlParam("date");
-						if (getDate === null) {
-							var url = "http://hfa.brnstz.com/scoreboard.jsonp?callback=?"
-						} else {
-							var url = "http://hfa.brnstz.com/scoreboard.jsonp?date="+getDate+"&callback=?"
-						}
-						
+			getData : function(club){
+				var dfd = jQuery.Deferred(),
+					$list = $("#hfa ol");
+				
+				if (club === "mlb"){
+					var tpl = "tpl/gameBox2.tpl",
+					getDate = getUrlParam("date"),
+					url = (getDate === null) ? "http://hfa.brnstz.com/scoreboard.jsonp?callback=?" : "http://hfa.brnstz.com/scoreboard.jsonp?date="+getDate+"&callback=?";
+					getJSON();
+				} else if (club === "nfl"){
+					var tpl = "tpl/gameBoxNFL.tpl",
+					getDate = getUrlParam("date"),
+					url = (getDate === null) ? "http://hfa.brnstz.com/scoreboard.jsonp?callback=?" : "http://hfa.brnstz.com/scoreboard.jsonp?date="+getDate+"&callback=?";
+					getJSON();
+				}
+
+				function getJSON(){
 					$.getJSON(url, function(json) {
 						var total = json.data.total_checkins;
 						$("#totalCheckins").html("Total Checkins: " + total)
@@ -59,7 +65,11 @@
 							$("#loader").hide();
 					});
 					
-					return dfd.promise();
+					return dfd.promise();	
+				}
+				
+						
+				
 			},
 			oauthUser: function(club){
 				var CLIENT_ID = "5GJJEF4DNR1UKAC55XYIBTX2ZEBJ2ZBWH1N3FYIXITRJBSBK",
@@ -68,13 +78,20 @@
 				
 				window.location.href = _url + "&" + club;
 			},
-			init: function(){
-				//$.when( hfa.getData() ).done(function(){
-					
+			init: function(options){
+				if(options === undefined){
+					options = {"club" : "none"}	
+				}
+				
+				$.when( hfa.getData(options.club) ).done(function(){
 					$("#datepicker").datepicker({ 
-						minDate: new Date(2011, 8, 17), 
-						maxDate: new Date(),
+						minDate: new Date(2011, 8, 17),
+						maxDate: new Date(2011, 9, 28),
+						selectOtherMonths: false,
+						numberOfMonths : [1,2],
 						showOn: "button",
+						gotoCurrent: false,
+						showCurrentAtPos: 1,
 						buttonImage: "img/calendar.gif",
 						buttonImageOnly: true,
 						onSelect: function(dateText, inst) {
@@ -117,7 +134,7 @@
 						}
 					});
 					
-				//});	
+				});	
 			}
 		}
 		return _self

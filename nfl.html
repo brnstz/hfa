@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<div id="hfa" class="mlb">
+<div id="hfa" class="nfl">
 	<div id="header">
 		<h1>Home Field <span>Advantage</span></h1>
 		<h2>Powered by Foursquare</h2>
@@ -41,7 +41,9 @@
 <script>
 	
 	$(function(){
-		hfa.init();
+		hfa.init({
+			"club" : "nfl"
+		});
 	});
 	
 	
