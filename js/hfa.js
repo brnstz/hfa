@@ -71,9 +71,11 @@
 						
 				
 			},
+
+			
 			oauthUser: function(club){
 				var CLIENT_ID = "5GJJEF4DNR1UKAC55XYIBTX2ZEBJ2ZBWH1N3FYIXITRJBSBK",
-					YOUR_REGISTERED_REDIRECT_URI = "http://http://www.fanvantage.me/pledge.html",
+					YOUR_REGISTERED_REDIRECT_URI = "http://www.fanvantage.me/pledge.html",
 					_url = "https://foursquare.com/oauth2/authenticate?client_id="+CLIENT_ID+"&response_type=token&redirect_uri="+YOUR_REGISTERED_REDIRECT_URI;
 				
 				window.location.href = _url + "&" + club;
