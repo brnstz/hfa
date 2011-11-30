@@ -18,6 +18,8 @@ DEFAULT_LIMIT=500
 # home_file_code => 4sq venue id
 VENUES = CONF['stadiums']
 
+NFL_VENUES = CONF['stadiums_nfl']
+
 def get_url(venue, afterTimestamp=0, limit=DEFAULT_LIMIT, offset=0):
 	return API % (venue, TOKEN, limit, offset, afterTimestamp)
 
@@ -34,21 +36,24 @@ def save_ts(ts):
 	fh.close()
 	os.rename(TS_FILE + '.tmp', TS_FILE)
 
-def run_venues():
+def run_venues(venues_dict, league):
 	last_ts = get_last_ts()
 	ts = int(time.time())
 
-	for hfc in VENUES.keys():
-		url = get_url(VENUES[hfc], last_ts - TS_OFFSET)
+	for hfc in venues_dict.keys():
+		url = get_url(venues_dict[hfc], last_ts - TS_OFFSET)
 
 		# Get data from 4sq
 		url_fh  = urllib.urlopen(url)
 		data = url_fh.read()
 		url_fh.close()
-	
-		# If need to call multiple times, call it data2.json or whatev
-		mydir  = '%s/data/checkins/%d/%s' % (ROOT, ts, hfc)
-		myfile = '%s/data.json' % (mydir)
+
+		if league == 'nfl':
+			mydir  = '%s/data/nfl/checkins/%d/%s' % (ROOT, ts, hfc)
+			myfile = '%s/data.json' % (mydir)
+		else:	
+			mydir  = '%s/data/checkins/%d/%s' % (ROOT, ts, hfc)
+			myfile = '%s/data.json' % (mydir)
 		
 		ensure_dir(myfile)
 
@@ -64,4 +69,5 @@ def ensure_dir(f):
     if not os.path.exists(d):
         os.makedirs(d)
 
-run_venues()
+run_venues(VENUES, 'mlb')
+run_venues(NFL_VENUES, 'nfl')
