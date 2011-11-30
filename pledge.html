@@ -119,12 +119,10 @@
 		var selectVal = "";
 		function hitAPI(club){
 			var access = token.substring(1);
-			$.ajax({
-				url: "http://hfa.brnstz.com/declare.jsonp?"+access+"&team="+club,
-				success: function(json){
-					$(".login").empty().text("Well done!!");
-				}
-			})
+			
+			$.post("/declare.jsonp?"+access+"&team="+club, function(data) {
+  				$(".login").empty().text("Well done!!");
+			});
 		}
 		
 		$("#teamSelect").bind("change",function(){

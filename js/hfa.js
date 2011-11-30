@@ -42,12 +42,12 @@
 				if (club === "mlb"){
 					var tpl = "tpl/gameBox2.tpl",
 					getDate = getUrlParam("date"),
-					url = (getDate === null) ? "http://hfa.brnstz.com/scoreboard.jsonp?callback=?" : "http://hfa.brnstz.com/scoreboard.jsonp?date="+getDate+"&callback=?";
+					url = (getDate === null) ? "/scoreboard.jsonp?callback=?" : "/scoreboard.jsonp?date="+getDate+"&callback=?";
 					getJSON();
 				} else if (club === "nfl"){
 					var tpl = "tpl/gameBoxNFL.tpl",
 					getDate = getUrlParam("date"),
-					url = (getDate === null) ? "http://hfa.brnstz.com/scoreboard.jsonp?callback=?" : "http://hfa.brnstz.com/scoreboard.jsonp?date="+getDate+"&callback=?";
+					url = (getDate === null) ? "/scoreboard.jsonp?callback=?" : "/scoreboard.jsonp?date="+getDate+"&callback=?";
 					getJSON();
 				}
 
