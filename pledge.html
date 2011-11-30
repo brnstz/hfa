@@ -33,7 +33,7 @@
 	<ol>
 		<li id="mlb">
 			<h4>MLB</h4>
-			<select name="mlb">
+			<select name="mlb" id="mlbSelect">
 				<option value="">Select a Team</option>
 				<option value="ari">Arizona Diamondbacks</option>
 				<option value="atl">Atlanta Braves</option>
@@ -69,7 +69,7 @@
 		</li>
 		<li id="nfl">
 			<h4>NFL</h4>
-			<select name="nfl">
+			<select name="nfl" id="nflSelect">
 				<option value="">Select a Team</option>
 				<option value="ari">Arizona Cardinals</option>
 				<option value="atl">Atlanta Falcons</option>
@@ -106,7 +106,7 @@
 			</select>
 		</li>
 	</ol>
-	<div id="submitBtn"><input id="pledgeBtn" class="submit" type="submit" value="Submit"/></div>
+	<div id="submitBtn"><button id="pledgeBtn" class="submit">Pledge</button></div>
 	</form>
 </div>
 
@@ -121,14 +121,9 @@
 			var access = token.substring(1);
 			
 			$.post("/declare.jsonp?"+access+"&team="+club, function(data) {
-  				$(".login").empty().text("Well done!!");
+  				//alert("post sucessul!");
 			});
 		}
-		
-		$("#teamSelect").bind("change",function(){
-			selectVal = $(this).val();
-			$("#pledgeBtn").fadeIn();
-		});
 
 		$("#teamSelection").validate({
 			errorLabelContainer: $("#errors"),
@@ -140,19 +135,12 @@
 			messages: {
 				mlb : "Pick an MLB team.",
 				nfl : "Pick an NFL team."	
+			},
+			submitHandler : function(){
+				hitAPI($("#mlbSelect").val());	
 			}
 
 		});
-		
-		$("#pledgeBtn").bind("submit",function(){
-			if(selectVal !== ""){
-				hitAPI(selectVal);
-			} else {
-				$("#errors").text("Yo dude! You have to select a team!");
-				return false;
-			}
-		});	
-		
 	});
 </script>
 	

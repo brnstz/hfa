@@ -43,7 +43,7 @@ padding:10px;
 	#hfa.pledge ol{overflow:hidden;margin:20px auto 0 auto;width:500px;}
 	#hfa.pledge ol li{height:100px;}
 	#hfa.pledge #submitBtn{margin:0 auto;width:140px;padding:10px 0;}
-	#hfa.pledge #submitBtn input {margin:0 auto;width:65px;
+	#hfa.pledge #submitBtn button {margin:0 auto;width:65px;
   background-color: #8c9cbf;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#8c9cbf 0%), to(#546a9e 50%));
   /* Saf4+, Chrome */
@@ -71,7 +71,7 @@ padding:10px;
   text-align: center;
   text-shadow: 0 -1px 1px #000f4d;
   width: 150px; }
-  #hfa.pledge #submitBtn input:hover {
+  #hfa.pledge #submitBtn div:hover {
     background-color: #7f8dad;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#7f8dad 0%), to(#4a5e8c 50%));
     /* Saf4+, Chrome */
@@ -81,7 +81,7 @@ padding:10px;
     background-image: -o-linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
     background-image: linear-gradient(top, #7f8dad 0%, #4a5e8c 50%, #2f477d 50%, #364c80 100%);
     cursor: pointer; }
-  #hfa.pledge #submitBtn input:active {
+  #hfa.pledge #submitBtn div:active {
     -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
     -moz-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
     -ms-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 white;
