@@ -117,9 +117,9 @@
 		var token = window.location.hash;
 		var interval = 5*1000;
 		var selectVal = "";
+
 		function hitAPI(club){
 			var access = token.substring(1);
-			
 			$.post("/declare.jsonp?"+access+"&team="+club, function(data) {
   				//alert("post sucessul!");
 			});
@@ -134,7 +134,7 @@
 			},
 			messages: {
 				mlb : "Pick an MLB team.",
-				nfl : "Pick an NFL team."	
+				nfl : "Pick an NFL team."
 			},
 			submitHandler : function(){
 				hitAPI($("#mlbSelect").val());	
