@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Homefield ADVANTAGE</title>
+	<title>Fanvantage.me | Welcome</title>
 	<meta name="generator" content="TextMate http://macromates.com/">
 	<meta name="author" content="Joe Kanakaraj">
 	<link href='http://fonts.googleapis.com/css?family=Monoton|Abel' rel='stylesheet' type='text/css'>
@@ -14,44 +14,44 @@
 	<link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.datepicker.css" type="text/css" media="all" />
 	
 	<style>
-	.login{position:absolute;top:20px;right:5px;}
+	#body p {padding:5px;font-family:verdana;font-weight:normal;font-size:13px;}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-	<script src="http://scripts.joe-kanakaraj.com/jquery.tpl/jquery.template.min.js"></script>
-	<script src="js/hfa.js"></script>
-	<script src="http://scripts.joe-kanakaraj.com/raphael/raphael-min.js"></script>
-	<script src="http://scripts.joe-kanakaraj.com/raphael/g.raphael-min.js"></script>
-	<script src="http://scripts.joe-kanakaraj.com/raphael/g.pie-min.js"></script>
+	<script src="js/fx.js"></script>
 </head>
 <body>
 
 <div id="hfa" class="index">
 	<div id="header">
-		<h1>Home Field <span>Advantage</span></h1>
+		<h1 id="h1">FAN<span>vantage</span></h1>
 		<h2>Powered by Foursquare</h2>
-		<div id="totalCheckins"></div>
-		<div id="jumpLinks">
-			<input id="datepicker" type="hidden"/>
-		</div>
-		<div id="teamChoice"><a href="javascript:void(0)">Declare your allegiance!</a></div>
-		<div class="login">
-			<div id="connectToFsq">Connect to Foursquare</div>
-		</div>
 	</div>
-	<div id="loader"><img src="img/ajax-loader.gif" class="loaderImg"/></div>
-	<ol></ol>
+	<div id="body">
+		<p>Welcome!  Fanvantage is a sports based web application that's built off of the <a href="http://developer.foursquare.com" target="_blank">Foursquare API</a>.  The purpose of Fanvantage is simple.  It's to see who's fan's will travel to see their beloved teams.</p>
+		<p>This idea came about during the Foursquare Hackathon in September. Even though we didn't win, we felt we built a pretty awesome application that caputred some pretty important and meaningful data, and it was also well recieved by our peers. The BETA release will be coming out soon, and hopefully we'll be able to fully launch everything in April, before the start of the baseball season.</p>
+		<p><strong>ATTENTION!</strong> We're looking for some help with designing and branding this product.  Fanvantage consists of one <a href="http://brnstz.com/">kick-ass software engineer</a> and one <a href="http://joe-kanakaraj.com">front-end javascript ninja</a>.  Combined we have ZERO design abilities.  If you're interested in helping us on this exciting project, <a href="mailto:jkanakaraj@mlb.com,brnstz@gmail.com?Subject=Fanvantage">please drop us a line</a>. We might be working on a small budget, but we'd be happy to trade design work for website and programming work, beers, dinner, and/or our unconditional love.  We're literally starting from scratch, so you'd have full control on the brand and design of the product!</p>
+	</div>
 </div>
 
-<script>
-	
+<script type="text/javascript">	
 	$(function(){
-		hfa.init();
+		//hfa.init();
+		$fx('#h1').fxAdd({type: 'opacity', from:10, to:100, delay: 35}).fxRun();
 	});
 	
-	
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27464204-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-	
 
 </body>
 </html>
