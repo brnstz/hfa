@@ -8,12 +8,15 @@ import json
 CONF = json.load(open('/usr/local/hfa/conf/hfa.conf'))
 ROOT  = CONF['root']
 TOKEN = CONF['token']
-API   = 'https://api.foursquare.com/v2/venues/%s/herenow?oauth_token=%s&limit=%d&offset=%d&afterTimestamp=%d'
+API   = 'https://api.foursquare.com/v2/venues/%s/herenow?oauth_token=%s&limit=%d&offset=%d&afterTimestamp=%d&v=%s'
 
 TS_FILE = ROOT + '/data/last_timestamp'
 TS_OFFSET = 60
 
 DEFAULT_LIMIT=500
+
+# Version of 4sq API to use
+VERSION='20110915'
 
 # home_file_code => 4sq venue id
 VENUES = CONF['stadiums']
@@ -21,7 +24,7 @@ VENUES = CONF['stadiums']
 NFL_VENUES = CONF['stadiums_nfl']
 
 def get_url(venue, afterTimestamp=0, limit=DEFAULT_LIMIT, offset=0):
-	return API % (venue, TOKEN, limit, offset, afterTimestamp)
+	return API % (venue, TOKEN, limit, offset, afterTimestamp, VERSION)
 
 def get_last_ts():
 	fh = open(TS_FILE, 'r')
