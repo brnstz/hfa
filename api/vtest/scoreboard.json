@@ -1,23 +1,23 @@
-{ “data” : 
+{ "data" : 
     {
-        “games”: {
-            “game” : [{
-                “home_file_code” : “phl”,
-                    “home_team_name”: “Phillies”,
-                    “away_file_code”: “nyy”,
-                    “away_team_name”: “Yankees”,
-                    “home_count”: 1234,
-                    “away_count”: 4332,
-                    “other_count”: 23
+        "games": {
+            "game" : [{
+                "home_file_code" : "phl",
+                    "home_team_name": "Phillies",
+                    "away_file_code": "nyy",
+                    "away_team_name": "Yankees",
+                    "home_count": 1234,
+                    "away_count": 4332,
+                    "other_count": 23
             },
                 {
-                    “home_file_code”: “bal”,
-                    “home_team_name”: “Orioles”,
-                    “away_file_code”: “nym”,
-                    “away_team_name”: “Mets”,
-                    “home_count”: 343,
-                    “away_count”: 43,
-                    “other_count”: 55
+                    "home_file_code": "bal",
+                    "home_team_name": "Orioles",
+                    "away_file_code": "nym",
+                    "away_team_name": "Mets",
+                    "home_count": 343,
+                    "away_count": 43,
+                    "other_count": 55
                 }]
         }
     }
