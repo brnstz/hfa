@@ -1,16 +1,16 @@
-{ “data”: 
+{ "data": 
     {
-        “counts”: [{
-            “date”: “2011-12-17”,
-                “home_count”: 234,
-                “away_count”: 544,
-                “other_count”: 300
+        "counts": [{
+            "date": "2011-12-17",
+                "home_count": 234,
+                "away_count": 544,
+                "other_count": 300
         },
             {
-                “date”: “2011-12-19”,
-                “home_count”: 433,
-                “away_count”: 123,
-                “other_count”: 34
+                "date": "2011-12-19",
+                "home_count": 433,
+                "away_count": 123,
+                "other_count": 34
             }]
     }
 }
