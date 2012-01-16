@@ -1,0 +1,13 @@
+{“data”:{
+    “counts”: [{
+        “date”: “2011-12-18”,
+            “count”: 342,
+            “field_status”: “home”
+    },
+        {
+            “date”: “2011-12-22”,
+            “count”: 55,
+            “field_status”: “away”
+        }]
+    }
+}
